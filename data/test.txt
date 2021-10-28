@@ -1,0 +1,84 @@
+http://repository.vnu.edu.vn/ViewOnline?bitstid=129933&type=1
+http://repository.vnu.edu.vn/ViewOnline?bitstid=129872&type=1
+http://repository.vnu.edu.vn/ViewOnline?bitstid=131233&type=1
+
+Kế toán
+http://repository.vnu.edu.vn/ViewOnline?bitstid=129556&type=1
+
+Tro tu ngu khi ba ne...
+http://repository.vnu.edu.vn/ViewOnline?bitstid=129926&type=1
+
+
+
+
+
+luuhonvu@gmail.com 
+chauaphivn@gmail.com
+
+table [Invoice]
+- Status = '1' : Generated - Pending Payment //label-info
+- Status = '2' : Paid //label-primary
+- Status = '3' : Printed  //label-success
+
+
+123qwe!@#
+select id from apexlog
+
+
+
+Môn LTCSDL - Lớp TK61  -- Thầy Tuấn
+
+Môn KTLT - Lớp CS82  -- Cô Tuyết
+Môn KTLT - Lớp IM81 -- Thầy Thái
+Môn LTCSDL - Lớp C81A  -- Thầy Tuấn
+
+Môn QTHCSDL - Lớp TH61 -- Thầy Khải
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
