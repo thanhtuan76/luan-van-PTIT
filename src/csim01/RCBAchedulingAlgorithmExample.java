@@ -37,7 +37,7 @@ public class RCBAchedulingAlgorithmExample  extends DataAwareSchedulingAlgorithm
             /**
              * Should change this based on real physical path
              */
-            String daxPath = "D:/csim01/config/dax/Montage_25.xml";
+            String daxPath = "E:/cloudsim/config/dax/Montage_25.xml";
 
             File daxFile = new File(daxPath);
             if (!daxFile.exists()) {

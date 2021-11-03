@@ -57,16 +57,15 @@ public class RCBASchedulingAlgorithm extends BaseSchedulingAlgorithm {
 
     public CondorVM getMostFreeVM(String vmClass) {
         int vmSize = getVmList().size();
-        CondorVM cVm = null;//(CondorVM)getVmList().get(0);
-        for (int j = 0; j < vmSize; j++) {
-            CondorVM vm = (CondorVM) getVmList().get(j);
-            if (vm.getState() == WorkflowSimTags.VM_STATUS_IDLE) {
-                cVm = vm;
-                break;
-            }
+        CondorVM cVm = null;//(CondorVM)getVmList().get(0);        
+        int i  = ClusterVM(vmClass);
+        CondorVM vm = (CondorVM) getVmList().get(i);
+        if (vm.getState() == WorkflowSimTags.VM_STATUS_IDLE) {
+            cVm = vm;
+            return cVm;
         }
         for (int j = 0; j < vmSize; j++) {
-            CondorVM vm = (CondorVM) getVmList().get(j);
+             vm = (CondorVM) getVmList().get(j);
             if ((vm.getState() == WorkflowSimTags.VM_STATUS_IDLE)
                     && vm.getCurrentRequestedTotalMips() > cVm.getCurrentRequestedTotalMips()) {
                 cVm = vm;
@@ -78,7 +77,7 @@ public class RCBASchedulingAlgorithm extends BaseSchedulingAlgorithm {
         //cVm.getCurrentAllocatedBw()
     }
 
-    public int getMostFreeVM1(String vmClass) {
+    public int ClusterVM(String vmClass) {
        int index =0;
         try {
             SimpleKMeans kmeans = new SimpleKMeans();
@@ -97,7 +96,7 @@ public class RCBASchedulingAlgorithm extends BaseSchedulingAlgorithm {
             int[] assignments = kmeans.getAssignments();
 
             int i = 0;
-            int k =0;
+            int k = 0;
             switch(vmClass)
             {
                 case "1":
@@ -145,7 +144,7 @@ public class RCBASchedulingAlgorithm extends BaseSchedulingAlgorithm {
 
     public Instances getVmData() {
         try {
-            DataSource source = new DataSource("D:/csim01/test/vm.arff");
+            DataSource source = new DataSource("E:/cloudsim/test/vm.arff");
             Instances data = source.getDataSet();
             data.delete(0);
             int vmSize = getVmList().size();
@@ -166,7 +165,7 @@ public class RCBASchedulingAlgorithm extends BaseSchedulingAlgorithm {
     public String predictRequestNB(Cloudlet req) {
         String res = "0";
         try {
-            DataSource source = new DataSource("D:/csim01/test/cloudlet.arff");
+            DataSource source = new DataSource("E:/cloudsim/test/cloudlet.arff");
             Instances traindata = source.getDataSet();
             traindata.setClassIndex(traindata.numAttributes() - 1);
 
@@ -179,7 +178,7 @@ public class RCBASchedulingAlgorithm extends BaseSchedulingAlgorithm {
             /**
              * load test data
              */
-            DataSource source2 = new DataSource("D:/csim01/test/cloudlet-unknown.arff");
+            DataSource source2 = new DataSource("E:/cloudsim/test/cloudlet-unknown.arff");
             Instances testdata = source2.getDataSet();
             Instance test = new Instance(6);
             test.setValue(0, req.getAverageSize());
